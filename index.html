@@ -15,9 +15,10 @@
    placeholder="Write your text here"> 
    <!-- <label class="" for="color">choose color:</label> -->
    <button class="fill-color-btn"><img class="icon" src="icons/paint-board-and-brush.png" onclick="openColorPalette()"></button>
-   <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff"/></div>
    <button class="increase-font-btn"><img class="icon" src="icons/increase font - icon.png" onclick="increaseFont()"></button>
    <button class="increase-font-btn"><img class="icon" src="icons/decrease font - icon.png" onclick="decreaseFont()"></button>
+   <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff" onchange="changeFillColor()"/></div>
+   <button class="switch-line-btn"><img class="icon" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="switchLine()"></button>
 
     <section class="meme-editor-container">
     <canvas class="main-canvas" id="my-canvas" height="500" width="500" ></canvas>
@@ -34,10 +35,9 @@
     </section>
 
   
-
+    <script src="js/meme-service.js"> </script>
     <script src="js/meme-controller.js"> </script>
     <script src="js/gallery-controller.js"> </script>
-    <script src="js/meme-service.js"> </script>
     <script src="js/local-storage.js"> </script>
     <script src="js/util.js"> </script>
 </body>
