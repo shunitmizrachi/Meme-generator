@@ -84,3 +84,10 @@ function switchLine() {
 }
 
 }
+
+function downloadCanvas(elLink) {
+  const data = gCanvas.toDataURL()
+  elLink.href = data
+  elLink.download = 'My-Meme.png'
+}
+
