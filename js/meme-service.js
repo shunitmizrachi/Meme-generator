@@ -33,6 +33,7 @@ function getImgs() {
 }
 
 
-function setImg(img) {
-    gCurrImg = gImgs[]
+function setImg(imgId) {
+   gCurrImg = gImgs[gImgs.findIndex(img => img.id === imgId)]
 }
+
