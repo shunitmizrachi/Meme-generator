@@ -9,7 +9,7 @@ var gMeme = {
  selectedLineIdx: 0,
  lines: [
  {
- txt: 'I sometimes eat Falafel',
+ txt: 'My text',
  size: 20,
  align: 'left',
  color: 'red'
@@ -36,4 +36,11 @@ function getImgs() {
 function setImg(imgId) {
    gCurrImg = gImgs[gImgs.findIndex(img => img.id === imgId)]
 }
+
+function updateSelectedImgId(imgId) {
+    gMeme.selectedImgId = imgId
+    console.log(gMeme)
+}
+
+
 

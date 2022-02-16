@@ -12,7 +12,12 @@
     <label for="line-text">Meme text:</label>
   <input type="text" id="line-text" name="line-text" onchange="setLineText(this.value); renderMeme()"
    onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" 
-   placeholder="Write your text here">
+   placeholder="Write your text here"> 
+   <!-- <label class="" for="color">choose color:</label> -->
+   <button class="fill-color-btn"><img class="icon" src="icons/paint-board-and-brush.png" onclick="openColorPalette()"></button>
+   <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff"/></div>
+   <button class="increase-font-btn"><img class="icon" src="icons/increase font - icon.png" onclick="increaseFont()"></button>
+   <button class="increase-font-btn"><img class="icon" src="icons/decrease font - icon.png" onclick="decreaseFont()"></button>
 
     <section class="meme-editor-container">
     <canvas class="main-canvas" id="my-canvas" height="500" width="500" ></canvas>

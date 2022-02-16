@@ -5,3 +5,8 @@ img.img {
     object-fit: cover;
 }
 
+img.icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
