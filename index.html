@@ -17,8 +17,25 @@
    <button class="fill-color-btn"><img class="icon" src="icons/paint-board-and-brush.png" onclick="openColorPalette()"></button>
    <button class="increase-font-btn"><img class="icon" src="icons/increase font - icon.png" onclick="increaseFont()"></button>
    <button class="increase-font-btn"><img class="icon" src="icons/decrease font - icon.png" onclick="decreaseFont()"></button>
-   <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff" onchange="changeFillColor()"/></div>
    <button class="switch-line-btn"><img class="icon" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="switchLine()"></button>
+
+
+   <select id="input-font" type="font" name="input-font" onchange="onChangeFontStyle(this.value)">
+
+   <option value="impact">Impact</option>
+   <option value="Arial">Arial</option>
+   <option value="fantasy">Fantasy</option>
+   <option value="cursive">Cursive</option>
+   <option value="verdana">Verdana</option>
+   <option value="helvetica">Helvetica</option>
+   <option value="tahoma">Tahoma</option>
+   <option value="georgia">Georgia</option>
+</select>
+
+<button class="align-left-btn"><img class="icon" src="icons/align-to-left.png" onclick="onAlignToLeft()"></button>
+<button class="align-right-btn"><img class="icon" src="icons/align-to-right.png" onclick="onAlignToRight()"></button>
+<button class="align-center-btn"><img class="icon" src="icons/center-text-alignment.png" onclick="onAlignToCenter()"></button>
+   <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff" onchange="onChangeFillColor()"/></div>
 
     <section class="meme-editor-container">
     <canvas class="main-canvas" id="my-canvas" height="500" width="500" ></canvas>

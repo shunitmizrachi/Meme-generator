@@ -27,14 +27,16 @@ var gMeme = {
         {
             txt: 'My text',
             size: 20,
-            align: 'left',
-            color: 'red'
+            align: 'center',
+            color: 'white',
+            fontFamily: 'impact'
         },
         {
             txt: 'My text',
             size: 20,
-            align: 'left',
-            color: 'red'
+            align: 'center',
+            color: 'white',
+            fontFamily: 'impact'
         }
 
     ]
@@ -72,3 +74,30 @@ function getLineText(lineIdx) {
 }
 
 
+function increaseFontSizeOfLine(lineIdx) {
+    gMeme.lines[lineIdx].size += 5
+    console.log(lineIdx)
+    console.log(gMeme.lines[lineIdx].size)
+}
+
+function decreaseFontSizeOfLine(lineIdx) {
+    gMeme.lines[lineIdx].size -= 5
+}
+
+function updateSelectedLine(currSelectedLineIdx) {
+    gMeme.selectedLineIdx = currSelectedLineIdx
+    console.log(gMeme.selectedLineIdx)
+    gCurrLineFocus = currSelectedLineIdx
+}
+
+function changeFillColorOfLine(lineIdx, fillColor) {
+    gMeme.lines[lineIdx].color = fillColor
+}
+
+function changeFontFamilyOfLine(lineIdx, fontFamily) {
+    gMeme.lines[lineIdx].fontFamily = fontFamily
+}
+
+function changeAlignOfLine(lineIdx, alignLine) {
+    gMeme.lines[lineIdx].align = alignLine
+}
