@@ -9,11 +9,10 @@ var gFontFamily
 
 
 function init() {
+  renderGallery()
   gCanvas = document.getElementById('my-canvas')
   gCtx = gCanvas.getContext('2d')
-  renderMeme()
-  renderGallery()
-
+    renderMeme()
 }
 
 
@@ -57,7 +56,12 @@ function drawText(txt, x, y) {
 function onImgSelect(imgId) {
   updateSelectedImgId(imgId)
   setImg(imgId)
+  var elEditor = document.querySelector('.meme-editor-container')
+  elEditor.classList.remove('hide')
+  var elGallery = document.querySelector('.gallery-container')
+  elGallery.classList.add('hide')
   renderMeme()
+
 }
 
 function openColorPalette() {
@@ -137,3 +141,12 @@ function onAlignToCenter() {
   if (gCurrLineFocus === 1) changeAlignOfLine(1, 'center')
   renderMeme()
 }
+
+function toggleMemeEditor() {
+  var elEditor = document.querySelector('.meme-editor-container')
+  elEditor.classList.add('hide')
+  var elGallery = document.querySelector('.gallery-container')
+  elGallery.classList.remove('hide')
+}
+
+

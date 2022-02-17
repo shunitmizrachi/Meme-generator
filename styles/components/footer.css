@@ -1,0 +1,14 @@
+footer {
+    padding: 70px 0;
+    margin-bottom: 6rem;
+    text-align: center;
+    top: 2000px;
+    background-color: black;
+}
+
+footer .logo {
+    font-family: permanent, monospace;
+    font-size: 1.875em;
+    color: var(--clr4);
+    letter-spacing: 0.2em;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,57 +8,80 @@
     <title>Meme Generator</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body onload="init()">
 
-    <label for="line-text">Meme text:</label>
-  <input type="text" id="line-text" name="line-text" onchange="setLineText(this.value); renderMeme()"
-   onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" 
-   placeholder="Write your text here"> 
-   <!-- <label class="" for="color">choose color:</label> -->
-   <button class="fill-color-btn"><img class="icon" src="icons/paint-board-and-brush.png" onclick="openColorPalette()"></button>
-   <button class="increase-font-btn"><img class="icon" src="icons/increase font - icon.png" onclick="increaseFont()"></button>
-   <button class="increase-font-btn"><img class="icon" src="icons/decrease font - icon.png" onclick="decreaseFont()"></button>
-   <button class="switch-line-btn"><img class="icon" src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="switchLine()"></button>
-
-
-   <select id="input-font" type="font" name="input-font" onchange="onChangeFontStyle(this.value)">
-
-   <option value="impact">Impact</option>
-   <option value="Arial">Arial</option>
-   <option value="fantasy">Fantasy</option>
-   <option value="cursive">Cursive</option>
-   <option value="verdana">Verdana</option>
-   <option value="helvetica">Helvetica</option>
-   <option value="tahoma">Tahoma</option>
-   <option value="georgia">Georgia</option>
-</select>
-
-<button class="align-left-btn"><img class="icon" src="icons/align-to-left.png" onclick="onAlignToLeft()"></button>
-<button class="align-right-btn"><img class="icon" src="icons/align-to-right.png" onclick="onAlignToRight()"></button>
-<button class="align-center-btn"><img class="icon" src="icons/center-text-alignment.png" onclick="onAlignToCenter()"></button>
-   <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff" onchange="onChangeFillColor()"/></div>
-
-    <section class="meme-editor-container">
-    <canvas class="main-canvas" id="my-canvas" height="500" width="500" ></canvas>
-    <a href="#" onclick="downloadCanvas(this)" download="myMeme">Download</a>
-
-    </section>
-
-    <section class="gallery-container">
-        <h2>Meme Backgrounds:</h2>
-        <div class="grid-container">
-            
+    <header class="main-header flex space-between align-center">
+        <div class="main-layout">
+            <div class="logo">Memgen</div>
+            <nav class="main-nav-container">
+                <ul class="main-nav clean-list flex">
+                    <li><a onclick="toggleMemeEditor()" href="#">Gallery</a></li>
+                    <li><a href="#">about</a></li>
+                </ul>
+            </nav>
         </div>
-       
+    </header>
+    <main class="main-content main-layout">
 
-    </section>
+        <section class="gallery-container">
+            <div class="gallery-content">
+            </div>
+        </section>
 
-  
+        <section class="meme-editor-container hide">
+            <div class="control box">
+                <input type="text" id="line-text" name="line-text" onchange="setLineText(this.value); renderMeme()"
+                    onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"
+                    placeholder="Write your text here">
+                <button class="arrow-up-btn"><img class="icon" src="icons/arrow-up.png"></button>
+                <button class="arrow-down-btn"><img class="icon" src="icons/arrow-down.png"></button>
+                <button class="switch-line-btn"><img class="icon"
+                        src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="switchLine()"></button>
+                <button class="add-btn"><img class="icon" src="icons/add.png"></button>
+                <button class="delete-btn"><img class="icon" src="icons/delete.png"></button>
+                <button class="increase-font-btn"><img class="icon" src="icons/increase font - icon.png"
+                        onclick="increaseFont()"></button>
+                <button class="increase-font-btn"><img class="icon" src="icons/decrease font - icon.png"
+                        onclick="decreaseFont()"></button>
+                <button class="align-left-btn"><img class="icon" src="icons/align-to-left.png"
+                        onclick="onAlignToLeft()"></button>
+                <button class="align-right-btn"><img class="icon" src="icons/align-to-right.png"
+                        onclick="onAlignToRight()"></button>
+                <button class="align-center-btn"><img class="icon" src="icons/center-text-alignment.png"
+                        onclick="onAlignToCenter()"></button>
+                <select id="input-font" type="font" name="input-font" onchange="onChangeFontStyle(this.value)">
+                    <option value="impact">Impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="cursive">Cursive</option>
+                    <option value="verdana">Verdana</option>
+                    <option value="helvetica">Helvetica</option>
+                    <option value="tahoma">Tahoma</option>
+                    <option value="georgia">Georgia</option>
+                </select>
+                <button class="fill-color-btn"><img class="icon" src="icons/paint-board-and-brush.png"
+                        onclick="openColorPalette()"></button>
+                <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff"
+                        onchange="onChangeFillColor()" /></div>
+            </div>
+            <canvas class="main-canvas" id="my-canvas" height="500" width="500"></canvas>
+            <a href="#" onclick="downloadCanvas(this)" download="myMeme">Download</a>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="logo">Memgen</div>
+        <small>all rights reserved 2022</small>
+    </footer>
+
+
     <script src="js/meme-service.js"> </script>
     <script src="js/meme-controller.js"> </script>
     <script src="js/gallery-controller.js"> </script>
     <script src="js/local-storage.js"> </script>
     <script src="js/util.js"> </script>
 </body>
-</html>
 
+</html>
