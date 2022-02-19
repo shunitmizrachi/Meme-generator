@@ -18,7 +18,7 @@
 }
 
 .main-header .main-nav a:hover {
-    color: var(--clr2);
+    color: var(--clr3);
 }
 
 .main-header .main-nav>*:not(:last-child) {

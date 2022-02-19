@@ -40,3 +40,10 @@ canvas{
     height: 500;
 }
 
+.icon {
+    cursor: pointer;
+}
+
+select {
+    cursor: pointer;
+}
