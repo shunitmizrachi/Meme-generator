@@ -36,13 +36,12 @@
                     placeholder="Write your text here">
                 <button class="arrow-up-btn"><img class="icon" src="icons/arrowup.png"></button>
                 <button class="arrow-down-btn"><img class="icon" src="icons/arrowdown.png"></button>
-                <button class="switch-line-btn"><img class="icon"
-                        src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="switchLine()"></button>
+                <button class="switch-line-btn"><img class="icon" src="icons/upanddown.png" onclick="switchLine()"></button>              
                 <button class="add-btn"><img class="icon" src="icons/add.png"></button>
                 <button class="delete-btn"><img class="icon" src="icons/trash.png"></button>
                 <button class="increase-font-btn"><img class="icon" src="icons/increasefont.png"
                         onclick="increaseFont()"></button>
-                <button class="increase-font-btn"><img class="icon" src="icons/decreasefont.png"
+                <button class="decrease-font-btn"><img class="icon" src="icons/decreasefont.png"
                         onclick="decreaseFont()"></button>
                 <button class="align-left-btn"><img class="icon" src="icons/aligntoleft.png"
                         onclick="onAlignToLeft()"></button>
@@ -65,15 +64,15 @@
                 <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff"
                         onchange="onChangeFillColor()" /></div>
             </div>
-  
 
-        
+
+
 
 
             <div class="canvas-container">
-            <canvas class="main-canvas" id="my-canvas" height="500" width="500"></canvas>
-            <a href="#" onclick="downloadCanvas(this)" download="myMeme">Download</a>
-        </div>
+                <canvas class="main-canvas" id="my-canvas" height="500" width="500"></canvas>
+                <a href="#" onclick="downloadCanvas(this)" download="myMeme">Download</a>
+            </div>
         </section>
 
     </main>
