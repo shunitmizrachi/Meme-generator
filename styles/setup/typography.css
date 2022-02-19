@@ -1,9 +1,9 @@
 @font-face {
     font-family: montserrat;
-    src: url(/Fonts/montserrat/Montserrat-Regular.ttf);
+    src: url(../..Fonts/montserrat/Montserrat-Regular.ttf);
 }
 
 @font-face {
     font-family: permanent;
-    src: url(/Fonts/permanent-marker/PermanentMarker-Regular.ttf);
+    src: url(../..Fonts/permanent-marker/PermanentMarker-Regular.ttf);
 }

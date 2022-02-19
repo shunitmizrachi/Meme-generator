@@ -27,22 +27,28 @@ var gMeme = {
         {
             txt: 'My text',
             size: 20,
+            baseLine: 'top',
             align: 'center',
             color: 'white',
-            fontFamily: 'impact'
+            fontFamily: 'impact',
+            pos: '', 
+            lineIdx: 0
         },
         {
             txt: 'My text',
             size: 20,
+            baseLine: 'bottom',
             align: 'center',
             color: 'white',
-            fontFamily: 'impact'
+            fontFamily: 'impact',
+            pos: '',
+            lineIdx: 1
         }
 
     ]
 }
 
-var gCurrImg = gImgs[0]
+var gCurrImg = gImgs[0].url
 
 
 function getMeme() {
@@ -60,7 +66,7 @@ function getImgs() {
 
 
 function setImg(imgId) {
-    gCurrImg = gImgs[gImgs.findIndex(img => img.id === imgId)]
+    gCurrImg = gImgs[gImgs.findIndex(img => img.id === imgId)].url
 }
 
 function updateSelectedImgId(imgId) {

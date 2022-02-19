@@ -2,49 +2,50 @@
 
 var gCanvas
 var gCtx
-var gFontSize = 20
-var gFillColor = '#ffffff'
+// var gFontSize = 20
+// var gFillColor = '#ffffff'
 var gCurrLineFocus = 0;
-var gFontFamily
+// var gFontFamily
+var gImg
+var nextId = 19
 
 
 function init() {
   renderGallery()
   gCanvas = document.getElementById('my-canvas')
   gCtx = gCanvas.getContext('2d')
+
+  window.addEventListener('resize', () => {
+    resizeCanvas()
     renderMeme()
-}
-
-
-function renderMeme() {
-  drawImg()
-
-
-}
-
-function drawImg() {
-  var img = new Image();
-  img.onload = () => {
-    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
-    if (gMeme.lines[0].align === 'left') drawText(getLineText(0), 50, 50)
-    else if (gMeme.lines[0].align === 'right') drawText(getLineText(0), 350, 50)
-    else drawText(getLineText(0), 200, 50)
-    if (gMeme.lines[1].align === 'left') drawText(getLineText(0), 50, 450)
-    else if (gMeme.lines[1].align === 'right') drawText(getLineText(0), 350, 450)
-    else drawText(getLineText(1), 200, 450)
-      
-  };
-  img.src = `${gCurrImg.url}`;
+  })
 
 }
 
 
-function drawText(txt, x, y) { 
+function renderMeme(imgId = 1) {
+  drawImg(imgId)
+  if (gMeme.lines[0].align === 'left') drawText(getLineText(0), 50, 50)
+  else if (gMeme.lines[0].align === 'right') drawText(getLineText(0), 350, 50)
+  else drawText(getLineText(0), 200, 50)
+  if (gMeme.lines[1].align === 'left') drawText(getLineText(0), 50, 450)
+  else if (gMeme.lines[1].align === 'right') drawText(getLineText(0), 350, 450)
+  else drawText(getLineText(1), 200, 450)
+}
+
+
+function drawImg(imgId) {
+  var elImg = document.querySelector(`.img${imgId}`)
+  gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height);
+}
+
+
+function drawText(txt, x, y) {
   gCtx.lineWidth = 1;
   gCtx.strokeStyle = 'black';
   if (y === 50) {
-  gCtx.font = `${gMeme.lines[0].size}px ${gMeme.lines[0].fontFamily}`;
-  gCtx.fillStyle = gMeme.lines[0].color;
+    gCtx.font = `${gMeme.lines[0].size}px ${gMeme.lines[0].fontFamily}`;
+    gCtx.fillStyle = gMeme.lines[0].color;
   } else {
     gCtx.font = `${gMeme.lines[1].size}px ${gMeme.lines[1].fontFamily}`;
     gCtx.fillStyle = gMeme.lines[1].color;
@@ -60,7 +61,7 @@ function onImgSelect(imgId) {
   elEditor.classList.remove('hide')
   var elGallery = document.querySelector('.gallery-container')
   elGallery.classList.add('hide')
-  renderMeme()
+  renderMeme(imgId)
 
 }
 
@@ -72,31 +73,31 @@ function openColorPalette() {
 }
 
 function increaseFont() {
-  if (gMeme.selectedLineIdx === 0) {  
-   increaseFontSizeOfLine(0)
-   renderMeme()
+  if (gMeme.selectedLineIdx === 0) {
+    increaseFontSizeOfLine(0)
+    renderMeme()
   } else {
-   increaseFontSizeOfLine(1)
-   renderMeme()
+    increaseFontSizeOfLine(1)
+    renderMeme()
   }
 }
 
 
 function decreaseFont() {
-  if (gCurrLineFocus === 0) {  
+  if (gCurrLineFocus === 0) {
     decreaseFontSizeOfLine(0)
     renderMeme()
-   } else {
+  } else {
     decreaseFontSizeOfLine(1)
     renderMeme()
-   }
+  }
 }
 
 function onChangeFillColor() {
   const fillColor = document.querySelector('[name=color]').value
   if (gCurrLineFocus === 0) changeFillColorOfLine(0, fillColor)
   if (gCurrLineFocus === 1) changeFillColorOfLine(1, fillColor)
-  
+
   renderMeme()
 }
 
@@ -106,10 +107,10 @@ function switchLine() {
     gCurrLineFocus = 1
     updateSelectedLine(1)
 
-  }else {
+  } else {
     gCurrLineFocus = 0
     updateSelectedLine(0)
-}
+  }
 }
 
 function downloadCanvas(elLink) {
@@ -148,5 +149,14 @@ function toggleMemeEditor() {
   var elGallery = document.querySelector('.gallery-container')
   elGallery.classList.remove('hide')
 }
+
+
+function resizeCanvas() {
+  var elContainer = document.querySelector('.canvas-container')
+  gCanvas.width = elContainer.offsetWidth - 20
+}
+
+
+
 
 
