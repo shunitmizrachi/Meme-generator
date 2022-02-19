@@ -34,21 +34,21 @@
                 <input type="text" id="line-text" name="line-text" onchange="setLineText(this.value); renderMeme()"
                     onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"
                     placeholder="Write your text here">
-                <button class="arrow-up-btn"><img class="icon" src="icons/arrow-up.png"></button>
-                <button class="arrow-down-btn"><img class="icon" src="icons/arrow-down.png"></button>
+                <button class="arrow-up-btn"><img class="icon" src="icons/arrowup.png"></button>
+                <button class="arrow-down-btn"><img class="icon" src="icons/arrowdown.png"></button>
                 <button class="switch-line-btn"><img class="icon"
                         src="icons/up-and-down-opposite-double-arrows-side-by-side.png" onclick="switchLine()"></button>
                 <button class="add-btn"><img class="icon" src="icons/add.png"></button>
-                <button class="delete-btn"><img class="icon" src="icons/delete.png"></button>
-                <button class="increase-font-btn"><img class="icon" src="icons/increase font - icon.png"
+                <button class="delete-btn"><img class="icon" src="icons/trash.png"></button>
+                <button class="increase-font-btn"><img class="icon" src="icons/increasefont.png"
                         onclick="increaseFont()"></button>
-                <button class="increase-font-btn"><img class="icon" src="icons/decrease font - icon.png"
+                <button class="increase-font-btn"><img class="icon" src="icons/decreasefont.png"
                         onclick="decreaseFont()"></button>
-                <button class="align-left-btn"><img class="icon" src="icons/align-to-left.png"
+                <button class="align-left-btn"><img class="icon" src="icons/aligntoleft.png"
                         onclick="onAlignToLeft()"></button>
-                <button class="align-right-btn"><img class="icon" src="icons/align-to-right.png"
+                <button class="align-right-btn"><img class="icon" src="icons/aligntoright.png"
                         onclick="onAlignToRight()"></button>
-                <button class="align-center-btn"><img class="icon" src="icons/center-text-alignment.png"
+                <button class="align-center-btn"><img class="icon" src="icons/centertextalignment.png"
                         onclick="onAlignToCenter()"></button>
                 <select id="input-font" type="font" name="input-font" onchange="onChangeFontStyle(this.value)">
                     <option value="impact">Impact</option>
@@ -60,7 +60,7 @@
                     <option value="tahoma">Tahoma</option>
                     <option value="georgia">Georgia</option>
                 </select>
-                <button class="fill-color-btn"><img class="icon" src="icons/paint-board-and-brush.png"
+                <button class="fill-color-btn"><img class="icon" src="icons/paintboardandbrush.png"
                         onclick="openColorPalette()"></button>
                 <div class="hide color-pallete"> <input type="color" id="color" name="color" value="#ffffff"
                         onchange="onChangeFillColor()" /></div>
